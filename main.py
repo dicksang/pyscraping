@@ -25,6 +25,7 @@ chrome_options = Options()
 chrome_options.add_argument("--headless")  # run without opening a browser window
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
+chrome_options.add_argument("--remote-debugging-port=9222")
 driver = webdriver.Chrome(options=chrome_options)  # Selenium 4+ auto-manages ChromeDriver
 
 # --- Step 2: Scrape Google Trends ---
