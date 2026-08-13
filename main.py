@@ -26,7 +26,7 @@ chrome_options.add_argument("--headless")  # run without opening a browser windo
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.add_argument("--remote-debugging-port=9222")
-driver = webdriver.Chrome(options=chrome_options)  # Selenium 4+ auto-manages ChromeDriver
+driver = webdriver.Chrome(options=chrome_options)  # Selenium auto-manages driver
 
 # --- Step 2: Scrape Google Trends ---
 url = "https://trends.google.com/trending?geo=HK&sort=search-volume"
