@@ -14,7 +14,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import time
 import pandas as pd
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # Fetch current date and time
 now = datetime.now()
