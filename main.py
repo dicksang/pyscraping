@@ -23,6 +23,8 @@ formatted_time = now.strftime("%Y-%m-%d %I%p").lower()
 # --- Step 1: Configure Chrome ---
 chrome_options = Options()
 chrome_options.add_argument("--headless")  # run without opening a browser window
+chrome_options.add_argument("--no-sandbox")
+chrome_options.add_argument("--disable-dev-shm-usage")
 driver = webdriver.Chrome(options=chrome_options)  # Selenium 4+ auto-manages ChromeDriver
 
 # --- Step 2: Scrape Google Trends ---
