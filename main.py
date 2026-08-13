@@ -18,7 +18,8 @@ from datetime import datetime
 
 # Fetch current date and time
 now = datetime.now()
-formatted_time = now.strftime("%Y-%m-%d %I%p").lower()
+adjusted_time = now + timedelta(hours=8)
+formatted_time = adjusted_time.strftime("%Y-%m-%d %I%p").lower()
 
 # --- Step 1: Configure Chrome ---
 chrome_options = Options()
@@ -74,7 +75,7 @@ sender_email = "stw.dick@gmail.com"
 receiver_email = ["wyc_stw@hotmail.com" 
                   ,"stw.dick@gmail.com"
                   #,"Janice.kayic@gmail.com" #-- Ka Yi
-                  ,"Py.info@gmail.com"
+                  ,"Py.info61@gmail.com"
                  ]
 password = "pmomdcchcgpeendn"  # Gmail app password (not your normal login password)
 
