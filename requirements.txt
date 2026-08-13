@@ -1,4 +1,3 @@
-functions-framework
 selenium
 pandas
 requests
