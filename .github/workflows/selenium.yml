@@ -1,0 +1,41 @@
+name: Selenium Snapshot
+
+on:
+  workflow_dispatch:   # run manually from the Actions tab
+  schedule:
+    - cron: "0 * * * *"   # run hourly (adjust as needed)
+
+jobs:
+  run-selenium:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+
+      - name: Install Chrome
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget unzip curl
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo apt-get install -y ./google-chrome-stable_current_amd64.deb
+
+      - name: Install Chromedriver
+        run: |
+          CHROME_VERSION=$(google-chrome --version | awk '{print $3}')
+          DRIVER_VERSION=$(echo $CHROME_VERSION | cut -d. -f1)
+          curl -sSL https://chromedriver.storage.googleapis.com/${DRIVER_VERSION}.0.0/chromedriver_linux64.zip -o chromedriver.zip
+          unzip chromedriver.zip
+          sudo mv chromedriver /usr/local/bin/
+          rm chromedriver.zip
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run script
+        run: python main.py
