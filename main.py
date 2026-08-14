@@ -73,7 +73,6 @@ print(html_table)  # Debug: see the HTML table output
 # --- Step 4: Send Email via Gmail ---
 sender_email = "stw.dick@gmail.com"
 receiver_email = ["wyc_stw@hotmail.com" 
-                  ,"stw.dick@gmail.com"
                   #,"Janice.kayic@gmail.com" #-- Ka Yi
                   ,"Py.info61@gmail.com"
                  ]
